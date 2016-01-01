@@ -1,0 +1,11 @@
+<h1>List of photos</h1>
+
+<%= link_to 'Add your photo', new_photo_path, class: 'btn btn-lg btn-primary' %>
+
+<ul class="row" id="photos-list">
+  <% @photos.each do |photo| %>
+    <li class="col-xs-3">
+      <%= image_tag photo.image.thumb('400x200#').url if photo.image_stored? %>
+    </li>
+  <% end %>
+</ul>
